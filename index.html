@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LexIA Ecuador - Plataforma Legal Inteligente</title>
+    <title>LexIA Ecuador - Asistente Legal con IA</title>
     <meta name="description" content="Asistente legal con IA especializado en derecho ecuatoriano">
-    <meta name="keywords" content="derecho ecuatoriano, abogado, IA legal, consultoría jurídica">
     <style>
         :root {
             --primary: #1a3c6e;
@@ -13,9 +12,6 @@
             --accent: #8b0000;
             --light: #f5f5f5;
             --dark: #333;
-            --success: #28a745;
-            --warning: #ffc107;
-            --danger: #dc3545;
         }
         
         * {
@@ -31,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* Header Principal */
+        /* Header */
         .main-header {
             background: linear-gradient(135deg, var(--primary), #2c5282);
             color: white;
@@ -124,7 +120,7 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -178,10 +174,10 @@
             transform: translateY(-2px);
         }
 
-        /* Asistente Principal */
+        /* Asistente */
         .assistant-container {
             max-width: 1000px;
-            margin: -50px auto 0;
+            margin: 2rem auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -207,16 +203,6 @@
             justify-content: center;
             font-size: 1.5rem;
             color: var(--primary);
-        }
-
-        .assistant-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .assistant-info p {
-            opacity: 0.9;
-            font-size: 0.9rem;
         }
 
         .assistant-messages {
@@ -275,7 +261,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* Características */
+        /* Features */
         .features-section {
             padding: 4rem 2rem;
             background: #f8f9fa;
@@ -318,42 +304,6 @@
             margin-bottom: 1rem;
         }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        /* Áreas Legales */
-        .legal-areas-section {
-            padding: 4rem 2rem;
-        }
-
-        .legal-areas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .area-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            text-align: center;
-            border-top: 4px solid var(--primary);
-        }
-
-        .area-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .area-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
         /* Footer */
         footer {
             background: var(--primary);
@@ -362,128 +312,9 @@
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Sistema de Login (oculto inicialmente) */
-        .login-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .login-box {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
-
-        .login-logo {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .login-box h2 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .login-box p {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .login-btn {
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .login-btn:hover {
-            background: #2c5282;
-        }
-
-        .login-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .login-links a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .login-links a:hover {
-            text-decoration: underline;
-        }
-
-        .close-login {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #666;
-            cursor: pointer;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
                 gap: 1rem;
             }
 
@@ -493,7 +324,6 @@
 
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
             }
 
             .assistant-messages {
@@ -504,15 +334,11 @@
             .message {
                 max-width: 90%;
             }
-
-            .quick-actions {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Principal -->
+    <!-- Header -->
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
@@ -521,28 +347,27 @@
             </div>
             
             <nav class="nav-links">
-                <a href="#inicio">Inicio</a>
                 <a href="#asistente">Asistente IA</a>
                 <a href="#caracteristicas">Características</a>
                 <a href="#areas">Áreas Legales</a>
             </nav>
             
             <div class="auth-buttons">
-                <a href="#" class="login-btn-small" id="show-login">Iniciar Sesión</a>
-                <a href="#" class="register-btn" id="show-register">Registrarse</a>
+                <a href="#login" class="login-btn-small">Iniciar Sesión</a>
+                <a href="#register" class="register-btn">Registrarse</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="hero-container">
             <h2>Asistente Legal con IA para Ecuador</h2>
-            <p>Obtén respuestas legales instantáneas basadas en la legislación ecuatoriana actual. Consultas sobre derecho civil, laboral, penal y más.</p>
+            <p>Obtén respuestas legales instantáneas basadas en la legislación ecuatoriana actual</p>
             
             <div class="hero-buttons">
-                <button class="cta-button cta-primary" id="try-assistant">Probar Asistente Gratis</button>
-                <button class="cta-button cta-secondary" id="learn-more">Conocer Más</button>
+                <button class="cta-button cta-primary" onclick="scrollToAssistant()">Probar Asistente Gratis</button>
+                <button class="cta-button cta-secondary" onclick="scrollToFeatures()">Conocer Más</button>
             </div>
         </div>
     </section>
@@ -560,40 +385,25 @@
         <div class="assistant-messages" id="assistant-messages">
             <div class="message ai-message">
                 <p>¡Hola! Soy tu asistente legal especializado en derecho ecuatoriano. Estoy aquí para ayudarte con consultas sobre:</p>
-                <p>• <strong>Derecho Civil:</strong> Contratos, propiedad, sucesiones, familia según el Código Civil</p>
-                <p>• <strong>Derecho Laboral:</strong> Despidos, contratación, derechos según Código del Trabajo</p>
-                <p>• <strong>Derecho Penal:</strong> Delitos, procesos según COIP</p>
+                <p>• <strong>Derecho Civil:</strong> Contratos, propiedad, sucesiones, familia</p>
+                <p>• <strong>Derecho Laboral:</strong> Despidos, contratación, derechos trabajadores</p>
+                <p>• <strong>Derecho Penal:</strong> Delitos, procesos penales</p>
                 <p>• <strong>Derecho Administrativo:</strong> Trámites públicos, contratación estatal</p>
-                <p>• <strong>Derecho Constitucional:</strong> Derechos fundamentales, garantías</p>
-                <p>• <strong>Derecho Tributario:</strong> Impuestos, obligaciones SRI</p>
                 <p><em>¿En qué área legal necesitas ayuda hoy?</em></p>
-            </div>
-            
-            <div class="message user-message">
-                <p>Hola, necesito información sobre contratos de arrendamiento en Ecuador</p>
-            </div>
-            
-            <div class="message ai-message">
-                <p>Según el <strong>Código Civil ecuatoriano (Arts. 1911-1956)</strong>, los contratos de arrendamiento requieren:</p>
-                <p>✅ <strong>Plazo mínimo:</strong> 1 año con prórroga automática</p>
-                <p>✅ <strong>Depósito de garantía:</strong> Máximo 1 mes de canon</p>
-                <p>✅ <strong>Reparaciones:</strong> Mayores para el arrendador, menores para el arrendatario</p>
-                <p>✅ <strong>Desahucio:</strong> Requiere notificación con 90 días de anticipación</p>
-                <p>¿Te gustaría conocer más detalles sobre algún aspecto específico?</p>
             </div>
         </div>
         
         <div class="quick-actions">
-            <button class="quick-action-btn" data-question="¿Cuáles son los requisitos para un contrato laboral?">
+            <button class="quick-action-btn" onclick="askQuestion('¿Cuáles son los requisitos para un contrato laboral en Ecuador?')">
                 📝 Contratos Laborales
             </button>
-            <button class="quick-action-btn" data-question="¿Cómo funciona el proceso de divorcio?">
+            <button class="quick-action-btn" onclick="askQuestion('¿Cómo funciona el proceso de divorcio en Ecuador?')">
                 💔 Proceso de Divorcio
             </button>
-            <button class="quick-action-btn" data-question="¿Qué derechos tengo ante un despido?">
+            <button class="quick-action-btn" onclick="askQuestion('¿Qué derechos tengo ante un despido en Ecuador?')">
                 🏢 Derechos Laborales
             </button>
-            <button class="quick-action-btn" data-question="¿Cómo registrar una propiedad?">
+            <button class="quick-action-btn" onclick="askQuestion('¿Cómo registrar una propiedad en Ecuador?')">
                 🏠 Registro de Propiedad
             </button>
         </div>
@@ -607,42 +417,17 @@
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <h3>IA Legal Especializada</h3>
-                    <p>Asistente entrenado específicamente en legislación ecuatoriana actualizada y jurisprudencia local.</p>
+                    <p>Asistente entrenado específicamente en legislación ecuatoriana actualizada</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Respuestas Instantáneas</h3>
-                    <p>Obtén análisis legales en segundos, sin esperas ni costos de consulta inicial.</p>
+                    <p>Obtén análisis legales en segundos, sin esperas ni costos de consulta inicial</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
                     <h3>Base Legal Completa</h3>
-                    <p>Acceso a códigos, leyes especiales y jurisprudencia del sistema judicial ecuatoriano.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Áreas Legales -->
-    <section class="legal-areas-section" id="areas">
-        <div class="container">
-            <h2 class="section-title">Áreas Legales Especializadas</h2>
-            <div class="legal-areas">
-                <div class="area-card">
-                    <h3>Derecho Civil</h3>
-                    <p>Contratos, propiedad, sucesiones, familia y obligaciones según el Código Civil ecuatoriano.</p>
-                </div>
-                <div class="area-card">
-                    <h3>Derecho Laboral</h3>
-                    <p>Relaciones laborales, despidos, contratación y derechos de los trabajadores en Ecuador.</p>
-                </div>
-                <div class="area-card">
-                    <h3>Derecho Penal</h3>
-                    <p>Delitos, procesos penales, defensa técnica y sistema de justicia penal ecuatoriano.</p>
-                </div>
-                <div class="area-card">
-                    <h3>Derecho Administrativo</h3>
-                    <p>Procedimientos ante entidades públicas, contratación estatal y derecho administrativo.</p>
+                    <p>Acceso a códigos, leyes especiales y jurisprudencia del sistema judicial ecuatoriano</p>
                 </div>
             </div>
         </div>
@@ -653,155 +438,75 @@
         <div class="footer-content">
             <p>LexIA Ecuador - Asistente Legal Inteligente</p>
             <p>© 2024 - Todos los derechos reservados</p>
-            <p>Información: info@lexia-ecuador.com | Teléfono: +593 2 123 4567</p>
         </div>
     </footer>
 
-    <!-- Sistema de Login -->
-    <div class="login-container" id="login-container">
-        <div class="login-box">
-            <button class="close-login" id="close-login">×</button>
-            <div class="login-logo">⚖️</div>
-            <h2>LexIA Ecuador</h2>
-            <p>Plataforma Legal Inteligente</p>
-            
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Usuario o Email</label>
-                    <input type="text" id="username" required placeholder="Ingresa tu usuario o email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" required placeholder="Ingresa tu contraseña">
-                </div>
-                
-                <button type="submit" class="login-btn">Iniciar Sesión</button>
-                
-                <div class="login-links">
-                    <a href="#" id="register-link">Crear Cuenta</a>
-                    <a href="#" id="forgot-password">¿Olvidaste tu contraseña?</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <script>
-        // Sistema de Navegación y Interacción
-        document.addEventListener('DOMContentLoaded', function() {
-            // Elementos del DOM
-            const showLoginBtn = document.getElementById('show-login');
-            const showRegisterBtn = document.getElementById('show-register');
-            const closeLoginBtn = document.getElementById('close-login');
-            const loginContainer = document.getElementById('login-container');
-            const tryAssistantBtn = document.getElementById('try-assistant');
-            const learnMoreBtn = document.getElementById('learn-more');
-            const quickActionBtns = document.querySelectorAll('.quick-action-btn');
-            const assistantMessages = document.getElementById('assistant-messages');
-
-            // Mostrar login
-            showLoginBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                loginContainer.style.display = 'flex';
+        // Funciones de navegación
+        function scrollToAssistant() {
+            document.getElementById('asistente').scrollIntoView({ 
+                behavior: 'smooth' 
             });
+        }
 
-            // Mostrar registro (por ahora igual al login)
-            showRegisterBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                loginContainer.style.display = 'flex';
+        function scrollToFeatures() {
+            document.getElementById('caracteristicas').scrollIntoView({ 
+                behavior: 'smooth' 
             });
+        }
 
-            // Cerrar login
-            closeLoginBtn.addEventListener('click', function() {
-                loginContainer.style.display = 'none';
-            });
+        // Sistema de preguntas y respuestas
+        function askQuestion(question) {
+            const messagesContainer = document.getElementById('assistant-messages');
+            
+            // Agregar mensaje del usuario
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.innerHTML = `<p>${question}</p>`;
+            messagesContainer.appendChild(userMessage);
 
-            // Probar asistente
-            tryAssistantBtn.addEventListener('click', function() {
-                document.getElementById('asistente').scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            });
-
-            // Conocer más
-            learnMoreBtn.addEventListener('click', function() {
-                document.getElementById('caracteristicas').scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            });
-
-            // Acciones rápidas
-            quickActionBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const question = this.getAttribute('data-question');
-                    
-                    // Agregar mensaje del usuario
-                    const userMessage = document.createElement('div');
-                    userMessage.className = 'message user-message';
-                    userMessage.innerHTML = `<p>${question}</p>`;
-                    assistantMessages.appendChild(userMessage);
-
-                    // Simular respuesta de la IA
-                    setTimeout(() => {
-                        const aiResponse = generateAIResponse(question);
-                        const aiMessage = document.createElement('div');
-                        aiMessage.className = 'message ai-message';
-                        aiMessage.innerHTML = `<p>${aiResponse}</p>`;
-                        assistantMessages.appendChild(aiMessage);
-                        
-                        // Scroll al final
-                        assistantMessages.scrollTop = assistantMessages.scrollHeight;
-                    }, 1000);
-
-                    // Scroll al final
-                    assistantMessages.scrollTop = assistantMessages.scrollHeight;
-                });
-            });
-
-            // Generar respuestas de IA simuladas
-            function generateAIResponse(question) {
-                const lowerQuestion = question.toLowerCase();
+            // Simular respuesta de la IA
+            setTimeout(() => {
+                const aiResponse = generateAIResponse(question);
+                const aiMessage = document.createElement('div');
+                aiMessage.className = 'message ai-message';
+                aiMessage.innerHTML = `<p>${aiResponse}</p>`;
+                messagesContainer.appendChild(aiMessage);
                 
-                if (lowerQuestion.includes('contrato laboral') || lowerQuestion.includes('laboral')) {
-                    return `Según el <strong>Código del Trabajo ecuatoriano (Arts. 16-25)</strong>:\n\n✅ <strong>Requisitos del contrato:</strong>\n• Identificación de partes\n• Lugar y fecha\n• Descripción del trabajo\n• Remuneración\n• Jornada laboral\n• Lugar de trabajo\n\n✅ <strong>Tipos de contrato:</strong>\n• Por tiempo indefinido\n• Por tiempo fijo\n• Por obra cierta\n• Ocacional\n\n¿Necesitas información sobre algún tipo específico de contrato?`;
-                }
-                
-                if (lowerQuestion.includes('divorcio')) {
-                    return `En Ecuador existen dos tipos principales de divorcio según la <strong>Ley de Gestión de la Autoridad Competente en Materia Civil y Mercantil</strong>:\n\n✅ <strong>Divorcio Voluntario:</strong>\n• Mutuo acuerdo\n• 2 años de matrimonio mínimo\n• Acuerdo sobre hijos y bienes\n\n✅ <strong>Divorcio Contencioso:</strong>\n• Causales específicas (abandono, violencia, etc.)\n• Proceso judicial\n• Mayor duración\n\n¿Te gustaría conocer los requisitos específicos para tu caso?`;
-                }
-                
-                if (lowerQuestion.includes('despido') || lowerQuestion.includes('derechos laborales')) {
-                    return `De acuerdo al <strong>Código del Trabajo ecuatoriano (Arts. 169-172)</strong>:\n\n✅ <strong>Despido intempestivo:</strong>\n• Indemnización del 25% de últimas remuneraciones\n• Pago de beneficios legales completos\n• Preaviso de 30 días\n\n✅ <strong>Despido con justa causa:</strong>\n• Requiere prueba de incumplimiento grave\n• No genera indemnización\n• Debe notificarse por escrito\n\n¿Has sido despedido recientemente?`;
-                }
-                
-                if (lowerQuestion.includes('propiedad') || lowerQuestion.includes('registrar')) {
-                    return `Para registrar una propiedad en Ecuador según la <strong>Ley de Registro de la Propiedad</strong>:\n\n✅ <strong>Documentos requeridos:</strong>\n• Escritura pública\n• Certificado de tradición y libertad\n• Planos catastrales\n• Paz y salvo municipal\n\n✅ <strong>Proceso:</strong>\n1. Verificación en el Registro de la Propiedad\n2. Pago de tasas registrales\n3. Inscripción en el registro\n4. Obtención de certificado\n\nEl proceso toma aproximadamente 15-30 días hábiles.`;
-                }
-                
-                return `Entiendo tu consulta sobre "${question}". Como asistente legal especializado en derecho ecuatoriano, puedo proporcionarte información precisa sobre este tema basada en la legislación vigente. ¿Podrías darme más detalles específicos sobre tu situación para darte una respuesta más personalizada?`;
+                // Scroll al final
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+
+            // Scroll al final
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Generar respuestas de IA
+        function generateAIResponse(question) {
+            const lowerQuestion = question.toLowerCase();
+            
+            if (lowerQuestion.includes('contrato laboral')) {
+                return `Según el <strong>Código del Trabajo ecuatoriano (Arts. 16-25)</strong>:\n\n✅ <strong>Requisitos del contrato:</strong>\n• Identificación de partes\n• Lugar y fecha\n• Descripción del trabajo\n• Remuneración\n• Jornada laboral\n• Lugar de trabajo\n\n✅ <strong>Tipos de contrato:</strong>\n• Por tiempo indefinido\n• Por tiempo fijo\n• Por obra cierta\n• Ocacional`;
             }
+            
+            if (lowerQuestion.includes('divorcio')) {
+                return `En Ecuador existen dos tipos principales de divorcio:\n\n✅ <strong>Divorcio Voluntario:</strong>\n• Mutuo acuerdo\n• 2 años de matrimonio mínimo\n• Acuerdo sobre hijos y bienes\n\n✅ <strong>Divorcio Contencioso:</strong>\n• Causales específicas (abandono, violencia, etc.)\n• Proceso judicial\n• Mayor duración\n\n¿Te gustaría conocer los requisitos específicos para tu caso?`;
+            }
+            
+            if (lowerQuestion.includes('despido') || lowerQuestion.includes('derechos laborales')) {
+                return `De acuerdo al <strong>Código del Trabajo ecuatoriano (Arts. 169-172)</strong>:\n\n✅ <strong>Despido intempestivo:</strong>\n• Indemnización del 25% de últimas remuneraciones\n• Pago de beneficios legales completos\n• Preaviso de 30 días\n\n✅ <strong>Despido con justa causa:</strong>\n• Requiere prueba de incumplimiento grave\n• No genera indemnización\n• Debe notificarse por escrito`;
+            }
+            
+            if (lowerQuestion.includes('propiedad') || lowerQuestion.includes('registrar')) {
+                return `Para registrar una propiedad en Ecuador:\n\n✅ <strong>Documentos requeridos:</strong>\n• Escritura pública\n• Certificado de tradición y libertad\n• Planos catastrales\n• Paz y salvo municipal\n\n✅ <strong>Proceso:</strong>\n1. Verificación en el Registro de la Propiedad\n2. Pago de tasas registrales\n3. Inscripción en el registro\n4. Obtención de certificado`;
+            }
+            
+            return `Entiendo tu consulta sobre "${question}". Como asistente legal especializado en derecho ecuatoriano, puedo proporcionarte información precisa sobre este tema basada en la legislación vigente. ¿Podrías darme más detalles específicos sobre tu situación?`;
+        }
 
-            // Sistema de login básico
-            document.getElementById('login-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-
-                // Demo simple - en producción esto se conectaría a un backend
-                if (username && password) {
-                    alert('¡Inicio de sesión exitoso! En una implementación real, esto te llevaría al dashboard completo.');
-                    loginContainer.style.display = 'none';
-                } else {
-                    alert('Por favor, completa todos los campos.');
-                }
-            });
-
-            // Cerrar login al hacer clic fuera
-            loginContainer.addEventListener('click', function(e) {
-                if (e.target === loginContainer) {
-                    loginContainer.style.display = 'none';
-                }
-            });
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('LexIA Ecuador - Página cargada correctamente');
         });
     </script>
 </body>
