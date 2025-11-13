@@ -12,6 +12,8 @@
             --accent: #8b0000;
             --light: #f5f5f5;
             --dark: #333;
+            --success: #28a745;
+            --danger: #dc3545;
         }
         
         * {
@@ -84,6 +86,9 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
         }
 
         .login-btn-small {
@@ -99,7 +104,6 @@
         .register-btn {
             background: var(--secondary);
             color: var(--primary);
-            border: none;
         }
 
         .register-btn:hover {
@@ -172,6 +176,233 @@
             background: white;
             color: var(--primary);
             transform: translateY(-2px);
+        }
+
+        /* Modal de Login */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .login-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .close-login {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .close-login:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .login-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .login-tab {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .login-tab.active {
+            background: white;
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .login-content {
+            padding: 2rem;
+        }
+
+        .login-form {
+            display: block;
+        }
+
+        .register-form {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .remember-me input {
+            width: auto;
+        }
+
+        .forgot-password {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-submit {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-submit:hover {
+            background: #2c5282;
+        }
+
+        .login-divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #666;
+            position: relative;
+        }
+
+        .login-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e1e5e9;
+        }
+
+        .login-divider span {
+            background: white;
+            padding: 0 1rem;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--primary);
+            background: #f8f9fa;
+        }
+
+        .alert {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .alert-success {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .alert-error {
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--danger);
+            border: 1px solid var(--danger);
         }
 
         /* Asistente */
@@ -261,6 +492,35 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
+        /* Dashboard (oculto inicialmente) */
+        .dashboard {
+            display: none;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .user-welcome {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logout-btn {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         /* Features */
         .features-section {
             padding: 4rem 2rem;
@@ -334,6 +594,10 @@
             .message {
                 max-width: 90%;
             }
+
+            .social-login {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -353,8 +617,8 @@
             </nav>
             
             <div class="auth-buttons">
-                <a href="#login" class="login-btn-small">Iniciar Sesión</a>
-                <a href="#register" class="register-btn">Registrarse</a>
+                <button class="login-btn-small" id="show-login-btn">Iniciar Sesión</button>
+                <button class="register-btn" id="show-register-btn">Registrarse</button>
             </div>
         </div>
     </header>
@@ -372,6 +636,107 @@
         </div>
     </section>
 
+    <!-- Modal de Login -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-container">
+            <div class="login-header">
+                <button class="close-login" id="close-login">×</button>
+                <div class="login-logo">⚖️</div>
+                <h2>LexIA Ecuador</h2>
+                <p>Plataforma Legal Inteligente</p>
+            </div>
+
+            <div class="login-tabs">
+                <button class="login-tab active" data-tab="login">Iniciar Sesión</button>
+                <button class="login-tab" data-tab="register">Registrarse</button>
+            </div>
+
+            <div class="login-content">
+                <!-- Alerta de mensajes -->
+                <div class="alert" id="loginAlert"></div>
+
+                <!-- Formulario de Login -->
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="login-email">Usuario o Email</label>
+                        <input type="text" id="login-email" placeholder="usuario@ejemplo.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <label for="remember-me">Recordarme</label>
+                        </div>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-submit">Iniciar Sesión</button>
+                    
+                    <div class="login-divider">
+                        <span>O continuar con</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="social-btn">
+                            <span>📧</span> Google
+                        </button>
+                        <button type="button" class="social-btn">
+                            <span>📘</span> Facebook
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Formulario de Registro -->
+                <form class="register-form" id="registerForm">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" placeholder="Tu nombre completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" placeholder="usuario@ejemplo.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" placeholder="Mínimo 8 caracteres" required minlength="8">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm" placeholder="Repite tu contraseña" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-type">Tipo de Usuario</label>
+                        <select id="register-type" required>
+                            <option value="">Selecciona tu perfil</option>
+                            <option value="abogado">Abogado</option>
+                            <option value="estudiante">Estudiante de Derecho</option>
+                            <option value="cliente">Cliente/Usuario General</option>
+                            <option value="empresa">Empresa</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="register-terms" required>
+                            Acepto los <a href="#" style="color: var(--primary);">términos y condiciones</a> y la <a href="#" style="color: var(--primary);">política de privacidad</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="login-submit">Crear Cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Asistente Principal -->
     <section class="assistant-container" id="asistente">
         <div class="assistant-header">
@@ -384,12 +749,10 @@
         
         <div class="assistant-messages" id="assistant-messages">
             <div class="message ai-message">
-                <p>¡Hola! Soy tu asistente legal especializado en derecho ecuatoriano. Estoy aquí para ayudarte con consultas sobre:</p>
-                <p>• <strong>Derecho Civil:</strong> Contratos, propiedad, sucesiones, familia</p>
-                <p>• <strong>Derecho Laboral:</strong> Despidos, contratación, derechos trabajadores</p>
-                <p>• <strong>Derecho Penal:</strong> Delitos, procesos penales</p>
-                <p>• <strong>Derecho Administrativo:</strong> Trámites públicos, contratación estatal</p>
-                <p><em>¿En qué área legal necesitas ayuda hoy?</em></p>
+                <p>¡Hola! Soy tu asistente legal especializado en derecho ecuatoriano. Para acceder a todas las funciones, por favor inicia sesión.</p>
+                <p><em>Usuarios de prueba:</em></p>
+                <p>• <strong>Usuario:</strong> demo@lexia.ec | <strong>Contraseña:</strong> demo123</p>
+                <p>• <strong>Usuario:</strong> abogado@lexia.ec | <strong>Contraseña:</strong> abogado123</p>
             </div>
         </div>
         
@@ -406,6 +769,33 @@
             <button class="quick-action-btn" onclick="askQuestion('¿Cómo registrar una propiedad en Ecuador?')">
                 🏠 Registro de Propiedad
             </button>
+        </div>
+    </section>
+
+    <!-- Dashboard (solo visible después del login) -->
+    <section class="dashboard" id="dashboard">
+        <div class="dashboard-header">
+            <h2 class="user-welcome" id="userWelcome">Bienvenido, Usuario</h2>
+            <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+        </div>
+        <div class="assistant-container">
+            <div class="assistant-header">
+                <div class="assistant-avatar">⚖️</div>
+                <div class="assistant-info">
+                    <h3>Asistente Legal LexIA - Sesión Premium</h3>
+                    <p>Acceso completo activado - Todas las funciones disponibles</p>
+                </div>
+            </div>
+            <div class="assistant-messages" id="dashboard-messages">
+                <div class="message ai-message">
+                    <p>¡Bienvenido de nuevo! Ahora tienes acceso completo a todas las funciones premium:</p>
+                    <p>✅ <strong>Análisis de documentos PDF</strong></p>
+                    <p>✅ <strong>Descarga de informes legales</strong></p>
+                    <p>✅ <strong>Historial de consultas</strong></p>
+                    <p>✅ <strong>Asistencia legal avanzada</strong></p>
+                    <p><em>¿En qué puedo ayudarte hoy?</em></p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -442,22 +832,255 @@
     </footer>
 
     <script>
+        // Sistema de Autenticación
+        class AuthSystem {
+            constructor() {
+                this.currentUser = null;
+                this.users = JSON.parse(localStorage.getItem('lexia_users')) || this.createDemoUsers();
+                this.init();
+            }
+
+            createDemoUsers() {
+                const demoUsers = [
+                    { id: 1, email: 'demo@lexia.ec', password: 'demo123', name: 'Usuario Demo', type: 'cliente' },
+                    { id: 2, email: 'abogado@lexia.ec', password: 'abogado123', name: 'Dr. Carlos Mendoza', type: 'abogado' }
+                ];
+                localStorage.setItem('lexia_users', JSON.stringify(demoUsers));
+                return demoUsers;
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.checkExistingSession();
+            }
+
+            setupEventListeners() {
+                // Botones de login/register
+                document.getElementById('show-login-btn').addEventListener('click', () => this.showLogin());
+                document.getElementById('show-register-btn').addEventListener('click', () => this.showRegister());
+                document.getElementById('close-login').addEventListener('click', () => this.hideLogin());
+
+                // Tabs del login
+                document.querySelectorAll('.login-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => this.switchTab(e.target));
+                });
+
+                // Formularios
+                document.getElementById('loginForm').addEventListener('submit', (e) => this.handleLogin(e));
+                document.getElementById('registerForm').addEventListener('submit', (e) => this.handleRegister(e));
+
+                // Logout
+                document.getElementById('logout-btn').addEventListener('click', () => this.handleLogout());
+            }
+
+            showLogin() {
+                const modal = document.getElementById('loginModal');
+                modal.style.display = 'flex';
+                this.switchToTab('login');
+            }
+
+            showRegister() {
+                const modal = document.getElementById('loginModal');
+                modal.style.display = 'flex';
+                this.switchToTab('register');
+            }
+
+            hideLogin() {
+                const modal = document.getElementById('loginModal');
+                modal.style.display = 'none';
+                this.clearForms();
+            }
+
+            switchTab(tabElement) {
+                document.querySelectorAll('.login-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tabElement.classList.add('active');
+                
+                const tabName = tabElement.getAttribute('data-tab');
+                this.switchToTab(tabName);
+            }
+
+            switchToTab(tabName) {
+                document.querySelectorAll('.login-form, .register-form').forEach(form => {
+                    form.style.display = 'none';
+                });
+                
+                if (tabName === 'login') {
+                    document.getElementById('loginForm').style.display = 'block';
+                } else {
+                    document.getElementById('registerForm').style.display = 'block';
+                }
+                
+                this.clearAlerts();
+            }
+
+            async handleLogin(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                // Validación básica
+                if (!email || !password) {
+                    this.showAlert('Por favor, completa todos los campos', 'error');
+                    return;
+                }
+
+                // Simular verificación
+                const user = this.users.find(u => u.email === email && u.password === password);
+                
+                if (user) {
+                    this.currentUser = user;
+                    localStorage.setItem('current_user', JSON.stringify(user));
+                    this.showAlert('¡Inicio de sesión exitoso!', 'success');
+                    
+                    setTimeout(() => {
+                        this.hideLogin();
+                        this.showDashboard();
+                    }, 1500);
+                } else {
+                    this.showAlert('Usuario o contraseña incorrectos', 'error');
+                }
+            }
+
+            async handleRegister(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const confirm = document.getElementById('register-confirm').value;
+                const type = document.getElementById('register-type').value;
+                const terms = document.getElementById('register-terms').checked;
+
+                // Validaciones
+                if (!name || !email || !password || !confirm || !type) {
+                    this.showAlert('Por favor, completa todos los campos', 'error');
+                    return;
+                }
+
+                if (password !== confirm) {
+                    this.showAlert('Las contraseñas no coinciden', 'error');
+                    return;
+                }
+
+                if (password.length < 8) {
+                    this.showAlert('La contraseña debe tener al menos 8 caracteres', 'error');
+                    return;
+                }
+
+                if (!terms) {
+                    this.showAlert('Debes aceptar los términos y condiciones', 'error');
+                    return;
+                }
+
+                // Verificar si el usuario ya existe
+                if (this.users.find(u => u.email === email)) {
+                    this.showAlert('Este email ya está registrado', 'error');
+                    return;
+                }
+
+                // Crear nuevo usuario
+                const newUser = {
+                    id: Date.now(),
+                    email,
+                    password,
+                    name,
+                    type,
+                    createdAt: new Date().toISOString()
+                };
+
+                this.users.push(newUser);
+                localStorage.setItem('lexia_users', JSON.stringify(this.users));
+                
+                this.showAlert('¡Cuenta creada exitosamente! Ya puedes iniciar sesión.', 'success');
+                
+                setTimeout(() => {
+                    this.switchToTab('login');
+                    document.getElementById('login-email').value = email;
+                }, 2000);
+            }
+
+            handleLogout() {
+                this.currentUser = null;
+                localStorage.removeItem('current_user');
+                this.hideDashboard();
+                this.showAlert('Sesión cerrada correctamente', 'success');
+            }
+
+            checkExistingSession() {
+                const savedUser = localStorage.getItem('current_user');
+                if (savedUser) {
+                    this.currentUser = JSON.parse(savedUser);
+                    this.showDashboard();
+                }
+            }
+
+            showDashboard() {
+                document.getElementById('dashboard').style.display = 'block';
+                document.getElementById('asistente').style.display = 'none';
+                document.getElementById('userWelcome').textContent = `Bienvenido, ${this.currentUser.name}`;
+                
+                // Actualizar botones de header
+                document.querySelector('.auth-buttons').innerHTML = `
+                    <span style="color: white; margin-right: 1rem;">${this.currentUser.name}</span>
+                    <button class="logout-btn" onclick="authSystem.handleLogout()">Cerrar Sesión</button>
+                `;
+            }
+
+            hideDashboard() {
+                document.getElementById('dashboard').style.display = 'none';
+                document.getElementById('asistente').style.display = 'block';
+                
+                // Restaurar botones de header
+                document.querySelector('.auth-buttons').innerHTML = `
+                    <button class="login-btn-small" id="show-login-btn">Iniciar Sesión</button>
+                    <button class="register-btn" id="show-register-btn">Registrarse</button>
+                `;
+                
+                // Re-asignar event listeners
+                document.getElementById('show-login-btn').addEventListener('click', () => this.showLogin());
+                document.getElementById('show-register-btn').addEventListener('click', () => this.showRegister());
+            }
+
+            showAlert(message, type) {
+                const alert = document.getElementById('loginAlert');
+                alert.textContent = message;
+                alert.className = `alert alert-${type}`;
+                alert.style.display = 'block';
+                
+                setTimeout(() => {
+                    alert.style.display = 'none';
+                }, 5000);
+            }
+
+            clearAlerts() {
+                const alert = document.getElementById('loginAlert');
+                alert.style.display = 'none';
+            }
+
+            clearForms() {
+                document.getElementById('loginForm').reset();
+                document.getElementById('registerForm').reset();
+                this.clearAlerts();
+            }
+        }
+
         // Funciones de navegación
         function scrollToAssistant() {
-            document.getElementById('asistente').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+            document.getElementById('asistente').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToFeatures() {
-            document.getElementById('caracteristicas').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+            document.getElementById('caracteristicas').scrollIntoView({ behavior: 'smooth' });
         }
 
         // Sistema de preguntas y respuestas
         function askQuestion(question) {
-            const messagesContainer = document.getElementById('assistant-messages');
+            const messagesContainer = authSystem.currentUser ? 
+                document.getElementById('dashboard-messages') : 
+                document.getElementById('assistant-messages');
             
             // Agregar mensaje del usuario
             const userMessage = document.createElement('div');
@@ -504,9 +1127,19 @@
             return `Entiendo tu consulta sobre "${question}". Como asistente legal especializado en derecho ecuatoriano, puedo proporcionarte información precisa sobre este tema basada en la legislación vigente. ¿Podrías darme más detalles específicos sobre tu situación?`;
         }
 
+        // Inicializar el sistema de autenticación
+        const authSystem = new AuthSystem();
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                authSystem.hideLogin();
+            }
+        });
+
         // Inicialización
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('LexIA Ecuador - Página cargada correctamente');
+            console.log('LexIA Ecuador - Sistema de autenticación cargado');
         });
     </script>
 </body>
